@@ -4,7 +4,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.shortcuts import render
 
-# from loja.models import Cliente
+from .models import Cliente
 
 # Essa view abre a homepage do site
 def home(request):

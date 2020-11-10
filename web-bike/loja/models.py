@@ -1,6 +1,9 @@
 from django.db import models
 
 # Modelos gerais da loja
+from django.forms import forms
+
+
 class Endereco(models.Model):
     logradouro = models.CharField(verbose_name="Endereço", max_length=60)
     numero = models.CharField(verbose_name="Número", max_length=10)
@@ -17,8 +20,8 @@ class Telefone(models.Model):
         (u'res', u'residencial'),
         (u'com', u'comercial')
     )
-    tipo = models.CharField(max_length=3, choices=TIPOS_TELEFONE_ESCOLHA)
-    numero = models.CharField(max_length=12) # mascara?
+    tipo = models.CharField(verbose_name="Tipo do telefone", max_length=3, choices=TIPOS_TELEFONE_ESCOLHA)
+    numero = models.CharField(verbose_name="Número", max_length=12) # mascara?
 
 
 class Pessoa(models.Model):
@@ -61,14 +64,6 @@ class Gerente(Vendedor):
     def __str__(self):
         return self.nome
 
-class SocialMedia(Pessoa):
-    # apenas os campos das superclasses
-    def __init__(self):
-        self.vendedor = Vendedor()
-
-    def __str__(self):
-        return self.nome
-
 
 class Parcelamento(models.Model):
     codigo = models.CharField(verbose_name="Código", max_length=12)
@@ -79,7 +74,7 @@ class Parcelamento(models.Model):
 class Produto(models.Model):
     codigo = models.CharField(verbose_name="Código", max_length=12)
     descricao = models.CharField(verbose_name="Descrição do produto", max_length=144)
-    imagem = models.ImageField
+    imagem = models.ImageField(upload_to='imgs', default=None)
     preco = models.DecimalField(decimal_places=2, max_digits=8)
     quantidade = models.PositiveIntegerField
     desconto = models.DecimalField(decimal_places=2, max_digits=4)
@@ -87,3 +82,18 @@ class Produto(models.Model):
     eParcelavel = models.BooleanField
     recebeDesconto = models.BooleanField
 
+
+class ItemInventario(models.Model):
+    codigo = models.CharField(verbose_name="Código", max_length=12)
+    quantidadeEmEstoque = models.PositiveIntegerField(verbose_name="Quantidade")
+
+
+class Pagamento(models.Model):
+    codigo = models.CharField(verbose_name="Código", max_length=12)
+    valorTotal = models.DecimalField(decimal_places=2, max_digits=8)
+
+
+# Pedido
+# ParcelamentoEspecial
+# DescontoEspecial
+# AnuncioEspecial
