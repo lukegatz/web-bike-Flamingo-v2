@@ -15,14 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from loja.views import home, hello
+from loja import views
 
 urlpatterns = [
     path('grappelli/', include('grappelli.urls')), # grappelli URLS
-    path('', home),
+    path('', views.home),
     path('admin/', admin.site.urls),
-    path('hello/', hello), # 'ola mundo!!' (apenas para teste)
-    path('loja/', include('loja.urls')),
+    path('hello/', views.hello), # 'ola mundo!!' (apenas para teste)
     path('clientes/', include('loja.urls')),
     path('blog/', include('blog.urls')),
+    # apagar esses testes aqui depois...
+    path('template/', views.template),
 ]

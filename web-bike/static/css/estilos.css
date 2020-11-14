@@ -54,15 +54,20 @@ nav {
     flex-direction: column;
     align-items: center;
     background-color: #5d5d2d;
+    height: 5em;
 }
 
-/**nav > a {
+
+nav a {
     text-decoration: none;
     color: #f1f1f1;
-    font-weight: 700;
+    display: inline-block;
+    line-height: 3.5em;
+    /* font-weight: 700;
     font-size: 28px;
-    font-family: Pacifico, serif;
-}**/
+    font-family: Pacifico, serif; */
+}
+
 
 nav ul {
     list-style: none;
@@ -84,6 +89,10 @@ nav ul li a {
     width: 100%;
     text-decoration: none;
     color: #f1f1f1;
+}
+
+nav ul li a:hover {
+    background-color: #4d4d4d;
 }
 
 

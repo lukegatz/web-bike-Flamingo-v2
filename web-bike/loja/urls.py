@@ -1,8 +1,9 @@
 # urls da loja (web-bike, produtos) aqui
 from django.urls import path
 
-from .views import cliente
+from . import views
 
 urlpatterns = [
-    path('<str:nome>/', cliente),
+    path('<str:usuario>/', views.cliente),    # deve tratar cliente logado ou não
+    path('produtos/', views.lista_produtos),
 ]

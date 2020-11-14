@@ -93,6 +93,9 @@ class Pagamento(models.Model):
     valorTotal = models.DecimalField(decimal_places=2, max_digits=8)
 
 
+class Pedido(models.Model):
+    data_do_pedido = models.DateTimeField(auto_now_add=True)
+
 # Pedido
 # ParcelamentoEspecial
 # DescontoEspecial

@@ -35,3 +35,20 @@ def cliente(request, nome):
     except KeyError:
         return HttpResponse("Pessoa naum encontrada... :(")
     return render(request, 'cliente.html', {'v_user': user, 'v_passw': passw})
+
+
+# deve retornar o formulário para criação de cadastro de cliente
+def criarCliente(request):
+
+    valor_contexto = {}
+
+    return render(request, 'criar_cliente.html', context=valor_contexto)
+
+
+def lista_produtos(request):
+    pass
+
+
+# template de teste!
+def template(request):
+    return render(request, 'produtos.html')

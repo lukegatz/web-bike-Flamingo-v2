@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!-- essa linha do charset não tava no vídeo! -->
+    <meta charset="utf-8">
+    {% block title %}
+
+    {% endblock %}
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700|Roboto+Slab:400,700|Pacifico' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{% static "css/normalize.css" %}">
+    <link rel="stylesheet" href="{% static "css/estilos.css" %}">
+</head>
+  
+<body>
+    
+    <section id="topo">
+       <a href="#">
+          <div> <img src="{% static "img/logo.jpg" %}"/></div>
+       </a>
+        
+    </section>
+    <nav>
+        <ul>
+            <li><a href="#sobre">PRODUTOS</a></li>
+            <li><a href="#servicos">DICAS</a></li>
+            <li><a href="#portfolio">CURIOSIDADES</a></li>
+            <li><a href="#contato">NOTÍCIAS</a></li>
+            <li><a href="#">LOCAIS PARA PEDAL</a></li>
+        </ul>
+    </nav>
+
+    {% block content %}
+
+    {% endblock %}
+
+    <section id="contato">
+        <h2>CONTATO</h2>
+        <p>Entre em contato conosco.</p>
+        <div>
+            <img src="{% static "img/fone.png" %}" alt="fone">
+            <p><a href="tel:xx55555555">(xx) 5555 5555</a></p>
+        </div>
+
+        <div>
+            <img src="{% static "img/contato.png" %}" alt="email">
+            <p><a href="mailto:email@contato.com">email@contato.com</a></p>
+        </div>
+    </section>
+
+    <footer>
+        <p>Desenvolvido por Estevan Maito.</p>
+    </footer>
+    
+</body>
+</html>
