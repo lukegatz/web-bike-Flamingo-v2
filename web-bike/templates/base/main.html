@@ -8,17 +8,30 @@
 
     {% endblock %}
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700|Roboto+Slab:400,700|Pacifico' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="{% static "css/normalize.css" %}">
-    <link rel="stylesheet" href="{% static "css/estilos.css" %}">
+    <link rel="stylesheet" href="{% static "css/normalize.css" %}" />
+    <link rel="stylesheet" href="{% static "css/estilos.css" %}" />
 </head>
   
 <body>
-    
     <section id="topo">
-       <a href="#">
-          <div> <img src="{% static "img/logo.jpg" %}"/></div>
-       </a>
-        
+        <div class="elementTopo elementTopo_logo">
+                <a href="#">
+                    <div> <img src="{% static "img/logo3.jpg" %}" /></div>
+                </a>
+        </div>
+        <p class="elementParagraph">Bike Flamingo</p>
+        <div class="elementTopo elementTopo_carrinho">
+              <a href="#">
+                    <div> <img src="{% static "img/carrinho.png" %}" /></div>
+                </a>
+                Carrinho
+        </div>
+       <div class="elementTopo elementTopo_perfil">
+                <a href="#">
+                    <div> <img src="{% static "img/pessoa.png" %}" /></div>
+                </a>
+                Login
+        </div>
     </section>
     <nav>
         <ul>
@@ -34,23 +47,7 @@
 
     {% endblock %}
 
-    <section id="contato">
-        <h2>CONTATO</h2>
-        <p>Entre em contato conosco.</p>
-        <div>
-            <img src="{% static "img/fone.png" %}" alt="fone">
-            <p><a href="tel:xx55555555">(xx) 5555 5555</a></p>
-        </div>
+    {% include 'base/rodape.html' %}
 
-        <div>
-            <img src="{% static "img/contato.png" %}" alt="email">
-            <p><a href="mailto:email@contato.com">email@contato.com</a></p>
-        </div>
-    </section>
-
-    <footer>
-        <p>Desenvolvido por Estevan Maito.</p>
-    </footer>
-    
 </body>
 </html>

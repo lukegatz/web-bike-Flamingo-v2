@@ -1,96 +1,11 @@
+{% extends 'base/main.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <!-- essa linha do charset não tava no vídeo! -->
-    <meta charset="utf-8">
-    <title>Bem vindo a Bike Flamingo!</title>
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700|Roboto+Slab:400,700|Pacifico' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="{% static "css/normalize.css" %}">
-    <link rel="stylesheet" href="{% static "css/estilos.css" %}">
-</head>
-  
-<body>
-    
-    <section id="topo">
-       <a href="#">
-          <div> <img src="{% static "img/logo.jpg" %}"/></div>
-       </a>
-        
-    </section>
-    <nav>
-        <ul>
-            <li><a href="#sobre">PRODUTOS</a></li>
-            <li><a href="#servicos">DICAS</a></li>
-            <li><a href="#portfolio">CURIOSIDADES</a></li>
-            <li><a href="#contato">NOTÍCIAS</a></li>
-            <li><a href="#">LOCAIS PARA PEDAL</a></li>
-        </ul>
-    </nav>
 
-    <header>
-        <h1>LOREM IPSUM</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis exercitationem officiis.</p>
-        <a href="#sobre" class="botao">VER MAIS</a>
-    </header>
+{% block title %}
+<title>Bem vindo à Bike Flamingo!!!</title>
+{% endblock %}
 
-    <section id="sobre">
-        <h2>SOBRE</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis exercitationem officiis.</p>
-        <a href="#contato" class="botao">ENTRE EM CONTATO</a>
-    </section>
+{% block content %}
+    {% include 'base/conteudo.html' %}
+{% endblock %}
 
-    <section id="servicos">
-        <h2>SERVIÇOS</h2>
-        <div>
-            <img src="{% static "img/configs.png" %}" alt="Engrenagens">
-            <h3>Fácil Integração</h3>
-            <p>Integra facilmente seu site a qualquer gerenciador de conteúdo.</p>
-        </div>
-        <div>
-            <img src="{% static "img/hospedagem.png" %}" alt="Servidor">
-            <h3>Hospedagem Moderna</h3>
-            <p>Não deixe seus clientes na mão. Tenha seu site 24hrs no ar.</p>
-        </div>
-        <div>
-            <img src="{% static "img/site.png" %}" alt="Navegador">
-            <h3>Melhores Práticas</h3>
-            <p>Código legível, desenvolvido com as melhores práticas.</p>
-        </div>
-        <div>
-            <img src="{%  static "img/coracao.png" %}" alt="Coração">
-            <h3>Feito com Amor</h3>
-            <p>É melhor fazer seus sites com amor hoje em dia!</p>
-        </div>
-    </section>
-
-    <section id="portfolio">
-        <h2>PORTFÓLIO</h2>
-        <img src="{% static "img/portfolio-1.jpg" %}" alt="cogumelos">
-        <img src="{% static "img/portfolio-2.jpeg" %}" alt="Sol no horizonte">
-        <img src="{% static "img/portfolio-3.jpeg" %}" alt="Pessoas à beira de vale">
-        <img src="{% static "img/portfolio-4.jpg" %}" alt="Floresta nevada">
-        <img src="{% static "img/portfolio-5.jpeg" %}" alt="Praia deserta">
-        <img src="{% static "img/portfolio-6.jpeg" %}" alt="Alce à beira de rio">
-    </section>
-
-    <section id="contato">
-        <h2>CONTATO</h2>
-        <p>Entre em contato conosco.</p>
-        <div>
-            <img src="{% static "img/fone.png" %}" alt="fone">
-            <p><a href="tel:xx55555555">(xx) 5555 5555</a></p>
-        </div>
-
-        <div>
-            <img src="{% static "img/contato.png" %}" alt="email">
-            <p><a href="mailto:email@contato.com">email@contato.com</a></p>
-        </div>
-    </section>
-
-    <footer>
-        <p>Desenvolvido por Estevan Maito.</p>
-    </footer>
-    
-</body>
-</html>
