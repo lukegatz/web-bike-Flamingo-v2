@@ -5,8 +5,16 @@
 {% endblock %}
 
 {% block content %}
-<h1>Aqui fica o conteúdo do site</h1>
-<p>Uma imagem para decorar!</p>
-<hr>
-<img src="{% static "img/C64-MAPEI.jpg" %}" alt="uma imagem ae" width=40%>
+    <h1>Lista de produtos</h1>
+    <br><br>
+    {% for p in produtos %}
+        <tr>
+            <td> <img src="{{p.imagem}}" /> </td>
+            <td> {{p.modelo}} </td>
+            <td> {{p.preco}} </td>
+        </tr>
+    {% empty %}
+
+    {% endfor %}
+
 {% endblock %}

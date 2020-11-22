@@ -1,11 +1,12 @@
 from django.contrib import admin
 
-from .models import Cliente, Gerente, Produto, Vendedor, Endereco
+from .models import *
 
 # Register your models here.
 admin.site.register(Cliente)
 admin.site.register(Gerente)
 admin.site.register(Vendedor)
+admin.site.register(Bicicleta)
 
 # classes para formatação do endereço
 # class EnderecoInLine(admin.StackedInline):
@@ -24,4 +25,3 @@ admin.site.register(Vendedor)
 #
 #
 # admin.site.register(Cliente, ClienteAdmin)
-admin.site.register(Produto)

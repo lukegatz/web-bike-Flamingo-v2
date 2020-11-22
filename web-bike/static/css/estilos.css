@@ -26,6 +26,7 @@ h1, h2, h3 {
     /*line-height: 100px;*/
     background-color: #FFFFFF;
     float: left;
+    padding-top: 2vw;
 }
 .elementTopo_carrinho {
     width: 50px;

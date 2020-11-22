@@ -129,6 +129,7 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
     BASE_DIR / 'static', # copiar arquivos do grappelli!!!
+    BASE_DIR / 'loja/static/',
 ]
 
 # Arquivos de mídia via upload

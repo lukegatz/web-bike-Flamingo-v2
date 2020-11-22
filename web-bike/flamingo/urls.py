@@ -21,11 +21,10 @@ from loja import views
 
 urlpatterns = [
     path('grappelli/', include('grappelli.urls')), # grappelli URLS
-    path('', views.home),
+    path('', views.home, name='homepage'),
     path('admin/', admin.site.urls),
     path('hello/', views.hello), # 'ola mundo!!' (apenas para teste)
     path('clientes/', include('loja.urls')),
     path('blog/', include('blog.urls')),
-    # apagar esses testes aqui depois...
-    path('template/', views.template),
+    path('produtos/', views.lista_produtos, name='lista-produtos'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

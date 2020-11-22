@@ -15,8 +15,10 @@
 <body>
     <section id="topo">
         <div class="elementTopo elementTopo_logo">
-                <a href="#">
-                    <div> <img src="{% static "img/logo3.jpg" %}" /></div>
+                <a href="{% url 'homepage' %}">
+                    <div>
+                            <img src="{% static "img/logo3.jpg" %}" />
+                    </div>
                 </a>
         </div>
         <p class="elementParagraph">Bike Flamingo</p>
@@ -35,7 +37,7 @@
     </section>
     <nav>
         <ul>
-            <li><a href="#sobre">PRODUTOS</a></li>
+            <li><a href="{% url 'lista-produtos' %}">PRODUTOS</a></li>
             <li><a href="#servicos">DICAS</a></li>
             <li><a href="#portfolio">CURIOSIDADES</a></li>
             <li><a href="#contato">NOTÍCIAS</a></li>

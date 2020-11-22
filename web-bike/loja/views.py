@@ -1,10 +1,6 @@
-from django.shortcuts import render
-
-# Create your views here.
+from django.shortcuts import *
 from django.http import HttpResponse
-from django.shortcuts import render
-
-from .models import Cliente
+from .models import *
 
 # Essa view abre a homepage do site
 def home(request):
@@ -16,29 +12,31 @@ def hello(request):
 
 
 # Teste para leitura de dados do BD
-def ler_cliente(nome):
-    clientes = Cliente.objects.all()
+def ler_cliente(usuario):
+    clientes = Cliente.objects.filter(usuario=usuario)
 
-    for pessoa in clientes.values():
-        if pessoa['nome'] == nome:
-            return pessoa
+    for cliente in clientes:
+        return cliente
     else:
-        return HttpResponse("Pessoa naum encontrada... :(")
+        return None
 
 
 # View para retornar dados do cliente
-# (retirada da versao final!!!!)
-def cliente(request, nome):
-    try:
-        user = ler_cliente(nome)['usuario']
-        passw = ler_cliente(nome)['senha']
-    except KeyError:
-        return HttpResponse("Pessoa naum encontrada... :(")
-    return render(request, 'cliente.html', {'v_user': user, 'v_passw': passw})
+def cliente(request, usuario):
+    # o user já é o próprio name (o Cliente retorna name por padrão)
+    user = ler_cliente(usuario)
+
+    if user is not None:
+        # outro atributo tem que ser pego com __getattribute__('chave')
+        passw = ler_cliente(usuario).__getattribute__('senha')
+        context = {'v_user': user, 'v_passw': passw}
+        return render(request, 'cliente.html', context)
+    else:
+        raise Http404("Pessoa naum encontrada... :(")
 
 
 # deve retornar o formulário para criação de cadastro de cliente
-def criarCliente(request):
+def criarCliente(self, request):
 
     valor_contexto = {}
 
@@ -46,9 +44,6 @@ def criarCliente(request):
 
 
 def lista_produtos(request):
-    pass
-
-
-# template de teste!
-def template(request):
-    return render(request, 'produtos.html')
+    produtos = Produto.objects.all()
+    context = {'produtos': produtos}
+    return render(request, 'produtos.html', context)
