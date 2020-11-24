@@ -26,5 +26,6 @@ urlpatterns = [
     path('hello/', views.hello), # 'ola mundo!!' (apenas para teste)
     path('clientes/', include('loja.urls')),
     path('blog/', include('blog.urls')),
-    path('produtos/', views.lista_produtos, name='lista-produtos'),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    path(r'produtos/', include('produtos.urls')),
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \
+              + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

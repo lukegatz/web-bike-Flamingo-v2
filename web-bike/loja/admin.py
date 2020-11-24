@@ -6,7 +6,6 @@ from .models import *
 admin.site.register(Cliente)
 admin.site.register(Gerente)
 admin.site.register(Vendedor)
-admin.site.register(Bicicleta)
 
 # classes para formatação do endereço
 # class EnderecoInLine(admin.StackedInline):

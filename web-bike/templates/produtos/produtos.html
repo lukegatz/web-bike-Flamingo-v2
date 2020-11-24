@@ -1,0 +1,23 @@
+{% extends 'base/main.html' %}
+{% load static %}
+{% block title %}
+<link rel="stylesheet" href="{% static "css/produtos.css" %}" />
+<title>Lista de produtos :: Aproveite nossas PROMOÇÕES!!!</title>
+{% endblock %}
+
+{% block content %}
+    <h1>Lista de produtos</h1>
+    <br><br>
+    {% for p in produtos %}
+        <a href="{% url 'detalhe-produtos' %}">
+            <div>
+                <img src="{% get_media_prefix %}{{p.imagem}}" width="25%"/>
+                <p>{{p.modelo}}</p>
+                <p>{{p.preco}}</p>
+            </div>
+        </a>
+    {% empty %}
+        <h3>Não existem produtos cadastrados!</h3>
+    {% endfor %}
+
+{% endblock %}

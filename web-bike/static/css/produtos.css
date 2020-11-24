@@ -1,0 +1,7 @@
+.lista-prod {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 600px;
+    float: left;
+}

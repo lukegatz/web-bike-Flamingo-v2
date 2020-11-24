@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+import os.path
 from django.urls import path
 from django.conf.urls import include
 
@@ -28,7 +29,7 @@ SECRET_KEY = '3xjby*w!!pf2no$o^@t9#6w=s=!q3!gfqihkpfxgtxqc!9d+a*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.localhost', '127.0.0.1', '[::1]']
 
 
 # Application definition
@@ -42,7 +43,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',
+    'clientes',
     'loja',
+    'perfil',
+    'produtos',
 ]
 
 MIDDLEWARE = [
@@ -124,15 +128,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 STATIC_URL = '/static/'
-# STATIC_ROOT =
-
 STATICFILES_DIRS = [
-    BASE_DIR / 'static', # copiar arquivos do grappelli!!!
-    BASE_DIR / 'loja/static/',
+    BASE_DIR / 'static',  # copiar arquivos do grappelli!!!
+    '/produtos/static/'
 ]
 
 # Arquivos de mídia via upload
-MEDIA_URL = 'media/'
-# MEDIA_ROOT =
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+MEDIA_URL = '/media/'
 

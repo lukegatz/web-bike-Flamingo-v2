@@ -30,7 +30,7 @@ def cliente(request, usuario):
         # outro atributo tem que ser pego com __getattribute__('chave')
         passw = ler_cliente(usuario).__getattribute__('senha')
         context = {'v_user': user, 'v_passw': passw}
-        return render(request, 'cliente.html', context)
+        return render(request, 'clientes/cliente.html', context)
     else:
         raise Http404("Pessoa naum encontrada... :(")
 
@@ -43,7 +43,3 @@ def criarCliente(self, request):
     return render(request, 'criar_cliente.html', context=valor_contexto)
 
 
-def lista_produtos(request):
-    produtos = Produto.objects.all()
-    context = {'produtos': produtos}
-    return render(request, 'produtos.html', context)

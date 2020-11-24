@@ -1,0 +1,14 @@
+{% extends 'base/main.html' %}
+{% load static %}
+{% block title %}
+<link rel="stylesheet" href="{% static "css/produtos.css" %}" />
+<title> {{p.modelo}} </title>
+{% endblock %}
+
+{% block content %}
+    <h1>Mais dados da bike</h1>
+    <br><br>
+
+        {{p.imagem}}
+
+{% endblock %}
