@@ -6,7 +6,7 @@ from .models import *
 # Pegamos as referências do modelo 'Bicicleta'
 class BicicletaList(ListView):
     queryset = Bicicleta.objects.all()
-    template = 'produtos/produtos.html'
+    # template = 'produtos/produtos.html'
     context_object_name = 'bicicletas'
 
     def get_context_data(self, **kwargs):
@@ -17,6 +17,12 @@ class BicicletaList(ListView):
 
 class BicicletaDetail(DetailView):
     model = Bicicleta
+    template_name = 'produtos/detalhe-bicicletas.html'
     context_object_name = 'bicicleta'
-    template = 'produtos/detail-bicicleta.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        detalhe = Bicicleta.objects.filter(slug=self.kwargs.get('slug'))
+
+        return context
 

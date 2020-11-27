@@ -29,6 +29,7 @@ class ItemInventario(models.Model):
 
 
 # Classes que herdam Produto
+# Incluir categoria para bicicletas!!
 class Bicicleta(Produto):
     modelo = models.CharField(verbose_name="Modelo", max_length=60, null=True)
     # tipo
