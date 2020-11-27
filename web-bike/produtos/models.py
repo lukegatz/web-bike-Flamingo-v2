@@ -16,6 +16,7 @@ class Produto(models.Model):
     quantidade = models.PositiveIntegerField
     desconto = models.DecimalField(decimal_places=2, max_digits=4, null=True)
     marca = models.CharField(verbose_name="Marca", max_length=40, null=True)
+    slug = models.SlugField(null=True)
     #  parcelamento = models.ForeignKey(Parcelamento, on_delete=models.CASCADE)
     eParcelavel = models.BooleanField
     recebeDesconto = models.BooleanField

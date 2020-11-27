@@ -1,0 +1,22 @@
+{% extends "base/main.html" %}
+{% load static %}
+
+{% block title %}
+<title>Lista de produtos :: Aproveite nossas PROMOÇÕES!!!</title>
+{% endblock %}
+
+{% block content %}
+    <h2>Lista de produtos</h2>
+    <p>{{ request.GET.sessao }}</p>
+    {% for bicicleta in object_list %}
+        <a href="{% url 'detalhe-produtos' %}"}>
+            <div id="div-{{bicicleta.codigo}}">
+                <img id="imagem-prod" src="{% get_media_prefix %}{{bicicleta.imagem}}" width="25%"/>
+                <p id="modelo-prod">{{bicicleta.modelo}}</p>
+                <p id="preco-prod">{{bicicleta.preco}}</p>
+            </div>
+        </a>
+    {% empty %}
+        <h3>Não existem produtos cadastrados!</h3>
+    {% endfor %}
+{% endblock %}

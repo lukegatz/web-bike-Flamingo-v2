@@ -8,7 +8,10 @@
 {% block content %}
     <h1>Mais dados da bike</h1>
     <br><br>
-
-        {{p.imagem}}
+        {% for bicicleta in bicicletas %}
+            <p>{{bicicleta.modelo}}</p>
+        {% empty %}
+            <h3>Ih, tá vazio!!</h3>
+        {% endfor %}
 
 {% endblock %}
