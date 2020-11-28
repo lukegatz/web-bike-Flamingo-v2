@@ -1,7 +1,47 @@
-.lista-prod {
-    display: flex;
+/* Ids e classes de bicicleta_lista */
+#container-produtos {
+    max-width: 400px;
+    align-items: center;
+}
+#bicicleta-prod {
+    display: inline-grid;
+    flex-direction: row;
+    align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap;
+    width: 350px;
+    padding: 3%;
+}
+#bicicleta-prod img {
+    width: 100%;
+}
+#bicicleta-prod span h2, a {
+    color:#5d5d2d;
+    text-decoration: none;
+}
+
+/* Ids e classes de detalhe-bicicletas */
+#bicicleta-detalhe {
+    display: inline-grid;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 50%;
+    padding: 3%;
+    padding-top: 0;
+}
+#bicicleta-detalhe img {
     width: 600px;
+}
+#bicicleta-detalhe #texto-prod {
+    text-align: center;
+}
+#bicicleta-detalhe #descricao-prod {
     float: left;
+    display: inline-table;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 50%;
+}
+#container-detalhes {
+    max-width: 400px;
 }
