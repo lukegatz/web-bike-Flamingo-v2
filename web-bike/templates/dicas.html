@@ -1,0 +1,78 @@
+{% extends "base/main.html" %}
+{% load static %}
+
+{% block title %}
+<link rel="stylesheet" href="{% static "css/estilosDicas.css" %}" />
+<title>Dicas importantes!!</title>
+{% endblock %}
+
+{% block content %}
+    <section id="dicas">
+        <h2>Algumas dicas importantes</h2>
+        <div>
+            <figure>
+                <img src="{% static "img/lavando.jpg" %}" alt="Imagem Xis">
+                <figcaption>Lave sua bike</figcaption>
+            </figure>
+            <p>
+                Pode ser depois de um pedalada… Ou mesmo depois de várias…
+                Uma hora a sua bicicleta vai ficar suja e precisará de uma boa lavagem.
+                E antes de pensar em ir até a loja mais próxima deixar a máquina para
+                uma ducha, saiba que há várias dicas para lavar a bike em casa
+                com muita facilidade!
+            </p>
+        </div>
+
+        <div>
+            <figure>
+                <img src="{% static "img/lubrificando.jpg" %}" alt="Imagem Xis">
+                <figcaption>Lubrifique os componentes</figcaption>
+            </figure>
+            <p>
+                Para que você possa manter sua bike sempre em dia, prolongando
+                a vida útil dos componentes, uma boa limpeza seguida de uma
+                lubrificação é fundamental. Dê uma boa olhada nos lubrificantes
+                de boa qualidade, eles podem ser mais caros, mas o uso regular de
+                um lubrificante de qualidade resultará em economia a longo prazo,
+                pois protegem os componentes de maneira correta, diminuindo o
+                desgaste e evitando a troca das peças de sua bike antes do tempo
+                recomendado pelos fabricantes.
+            </p>
+        </div>
+
+        <div>
+            <figure>
+                <img src="{% static "img/quadro.jpg" %}" alt="Imagem Xis">
+                <figcaption>Qual tamanho quadro para mim?</figcaption>
+            </figure>
+            <p>
+                Existe diferença entre tamanho de quadro?
+                Qual tamanho de quadro devo usar? Estas são duas perguntas
+                recorrentes para alguns praticantes do ciclismo,
+                principalmente para os iniciantes. Com a tecnologia
+                oferecida atualmente pelos diversos fabricantes do meio,
+                cada vez mais a bicicleta se torna o que muitos ciclistas
+                descrevem: a extensão do corpo. No entanto, para isto,
+                é necessário que se tenha em mente alguns aspectos, a fim
+                de ajustar a bicicleta às suas preferências e necessidades.
+            </p>
+        </div>
+
+        <div>
+            <figure>
+                <img src="{% static "img/calibrando.jpg" %}" alt="Imagem Xis">
+                <figcaption>Como calibrar corretamente</figcaption>
+            </figure>
+            <p>“Pressionar os pneus com os dedos não é a melhor maneira de checar a pressão.
+                Existe no mercado um manômetro (medidor de pressão) portátil, que custa menos de
+                R$ 50”.<br>
+                Confira a sugestão de calibragem de diferentes modelos de pneus de bike,
+                de acordo com a Confederação Estadual de Ciclismo do Rio de Janeiro:<br><br>
+                Aro 26: de 35 a 45 PSI<br>
+                Speed: de 100 a 120 PSI<br>
+                Aro 16″: de 20 a 25 PSI<br>
+                Aro 20″: de 20 a 35 PSI
+            </p>
+        </div>
+    </section>
+{% endblock %}

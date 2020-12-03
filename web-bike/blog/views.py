@@ -13,9 +13,14 @@ def post(args):
     pass
 
 
-def rotas(args):
-    pass
+def dicas(request):
+    return render(request, 'dicas.html')
 
 
-def rota(args):
-    pass
+def curiosidades(request):
+    return render(request, 'curiosidades.html')
+
+
+def noticias(request):
+    return render(request, 'noticias.html')
+

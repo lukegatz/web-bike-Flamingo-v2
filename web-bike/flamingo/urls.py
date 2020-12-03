@@ -23,9 +23,15 @@ urlpatterns = [
     path('grappelli/', include('grappelli.urls')), # grappelli URLS
     path('', views.home, name='homepage'),
     path('admin/', admin.site.urls),
-    path('hello/', views.hello), # 'ola mundo!!' (apenas para teste)
-    path('clientes/', include('loja.urls')),
+    # path('hello/', views.hello), # 'ola mundo!!' (apenas para teste)
+    path('clientes/', include('clientes.urls')),
     path('blog/', include('blog.urls')),
     path(r'produtos/', include('produtos.urls')),
+    path('mapas/', include('mapas.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \
               + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+# personalizações do admin
+admin.site.index_title = "Bike Flamingo"
+admin.site.site_header = "LOGIN :: Bike Flamingo"
+admin.site.site_title = "Bike Flamingo"

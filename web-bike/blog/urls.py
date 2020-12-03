@@ -1,11 +1,12 @@
 # registrar as urls do blog (social media) aqui
 from django.urls import path
 
-from blog.views import posts, post, rotas, rota
+from .views import *
 
 urlpatterns = [
-    path('blog/posts/', posts),
-    path('blog/post/<int:id>', post),
-    path('blog/mapas/', rotas),
-    path('blog/mapa/<str:local>', rota)
+    path('posts/', posts),
+    path('post/<int:id>', post),
+    path('dicas/', dicas, name='dicas'),
+    path('curiosidades/', curiosidades, name='curiosidades'),
+    path('noticias/', noticias, name='noticias'),
 ]

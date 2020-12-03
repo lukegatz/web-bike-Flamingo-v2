@@ -1,4 +1,4 @@
-# urls da loja (web-bike, produtos) aqui
+# urls do módulo de clientes
 from django.urls import path
 
 from . import views

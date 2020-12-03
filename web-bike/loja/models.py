@@ -37,22 +37,14 @@ class Pessoa(models.Model):
         ordering = ['nome']
 
 
-class Cliente(Pessoa):
-    usuario = models.CharField(verbose_name="Usuario", max_length=15, unique=True, null=True)
-    senha = models.CharField(verbose_name="Senha", max_length=15, null=True)
-    # sexo
-    # altura
-    # peso
-    # enderecoEntrega
-
-    def __str__(self):
-        return self.nome
-
-
 class Vendedor(Pessoa):
     # codigo
     # permissoes
     # comissao
+
+    class Meta:
+        verbose_name = ('Vendedor')
+        verbose_name_plural = ('Vendedores')
 
     def __str__(self):
         return self.nome
@@ -60,6 +52,10 @@ class Vendedor(Pessoa):
 
 class Gerente(Vendedor):
     # apenas os campos das superclasses
+
+    class Meta:
+        verbose_name = ('Gerente')
+        verbose_name_plural = ('Gerentes')
 
     def __str__(self):
         return self.nome

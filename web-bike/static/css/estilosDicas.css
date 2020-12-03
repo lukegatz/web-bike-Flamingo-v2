@@ -1,0 +1,45 @@
+/*
+GERAL
+*/
+
+figure {
+  float: left;
+  margin: 0 10px 10px 0;
+    
+}
+ 
+h3 { clear: both; }
+/* Pelo fato da tag figure utilizar float left, aqui também poderíamos usar clear: left; */
+/*-----*/
+
+.botao {
+    color: #f1f1f1;
+    text-decoration: none;
+    padding: 10px 30px;
+    background-color: #4d4d4d;
+    font-size: .9em;
+    border-radius: 3px;
+}
+
+/*
+DICAS
+*/
+
+#dicas {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+#dicas div {
+    display: flex;
+    margin-top: 30px;
+    width: 80%;
+}
+
+#dicas img {
+    width: 150px;
+    height: 150px;
+}
+

@@ -1,0 +1,33 @@
+/*
+GERAL
+*/
+
+#curiosidades {
+    padding: 20px;
+    align-items: inherit;
+}
+
+.conteudo {
+    border: 2px outset;
+    text-align: left;
+    margin: 40px;
+    width: 90%;
+    box-shadow: 4px 5px #888888;
+    padding-top: 3vw;
+}
+
+/*.conteudo h3,p {*/
+/*    margin: 1vw;*/
+/*    padding: 0.7vw;*/
+/*}*/
+
+
+
+
+
+
+
+
+
+
+

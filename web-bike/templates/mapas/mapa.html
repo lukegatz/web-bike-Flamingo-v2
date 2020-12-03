@@ -1,0 +1,15 @@
+{% extends "base/main.html" %}
+{% load static %}
+
+{% block title %}
+<link rel="stylesheet" href="{% static "css/estilosMapa.css" %}" />
+<title>Locais para você pedalar!!</title>
+{% endblock %}
+
+{% block content %}
+    <section id="mapa">
+        <div class="conteudo">
+            <img src="{% static "img/mapa.jpg" %}" alt="Imagem Xis">
+        </div>
+    </section>
+{% endblock %}

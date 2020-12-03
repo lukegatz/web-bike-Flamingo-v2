@@ -24,7 +24,7 @@
         </div>
         <p class="elementParagraph">Bike Flamingo</p>
         <div class="elementTopo elementTopo_carrinho">
-              <a href="#">
+              <a href="#" alt="Ícone do carrinho de compras">
                     <div> <img src="{% static "img/carrinho.png" %}" /></div>
                 </a>
                 Carrinho
@@ -39,10 +39,10 @@
     <nav>
         <ul>
             <li><a href="{% url 'bicicletas' %}">PRODUTOS</a></li>
-            <li><a href="#servicos">DICAS</a></li>
-            <li><a href="#portfolio">CURIOSIDADES</a></li>
-            <li><a href="#contato">NOTÍCIAS</a></li>
-            <li><a href="#">LOCAIS PARA PEDAL</a></li>
+            <li><a href="{% url 'dicas' %}">DICAS</a></li>
+            <li><a href="{% url 'curiosidades' %}">CURIOSIDADES</a></li>
+            <li><a href="{% url 'noticias' %}">NOTÍCIAS</a></li>
+            <li><a href="{% url 'mapas' %}">LOCAIS PARA PEDAL</a></li>
         </ul>
     </nav>
 
