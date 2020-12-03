@@ -19,8 +19,14 @@ from django.contrib import admin
 from django.urls import path, include
 from loja import views
 
+'''
+Arquivo central de dispatch. Aqui estão listados os paths para as diversas áreas 
+do site.
+Os padrões aqui definidos renderizam a view respectiva ou enviam requisição para 
+a view específica (chamada por meio do include).
+'''
 urlpatterns = [
-    path('grappelli/', include('grappelli.urls')), # grappelli URLS
+    path('grappelli/', include('grappelli.urls')),  # grappelli URLS
     path('', views.home, name='homepage'),
     path('admin/', admin.site.urls),
     # path('hello/', views.hello), # 'ola mundo!!' (apenas para teste)
@@ -30,6 +36,7 @@ urlpatterns = [
     path('mapas/', include('mapas.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \
               + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
 
 # personalizações do admin
 admin.site.index_title = "Bike Flamingo"

@@ -5,7 +5,10 @@ from django.shortcuts import render
 from .models import Cliente
 
 
-# Teste para leitura de dados do BD
+'''
+A função ler_cliente retorna um cliente (baseado no usuário do cliente) ou
+None, caso esse cliente não exista.
+'''
 def ler_cliente(usuario):
     clientes = Cliente.objects.filter(usuario=usuario)
 
@@ -15,7 +18,10 @@ def ler_cliente(usuario):
         return None
 
 
-# View para retornar dados do cliente
+'''
+A view cliente retorna os dados do cliente, fazendo uma chamada a ler_cliente para
+verificar se o usuario que foi passado como parâmetro existe.
+'''
 def cliente(request, usuario):
     # o user já é o próprio name (o Cliente retorna name por padrão)
     user = ler_cliente(usuario)
@@ -26,7 +32,7 @@ def cliente(request, usuario):
         context = {'v_user': user, 'v_passw': passw}
         return render(request, 'clientes/cliente.html', context)
     else:
-        raise Http404("Pessoa naum encontrada... :(")
+        raise Http404("Pessoa não encontrada... :(")
 
 
 # deve retornar o formulário para criação de cadastro de cliente
