@@ -14,11 +14,14 @@
                 <img id="imagem-prod-detalhe" src="{% get_media_prefix %}{{bicicleta.imagem}}" />
                 <span id="texto-prod">
                     <h2>{{bicicleta.modelo}}</h2>
-                    <h2>R$ {{bicicleta.preco}}</h2>
+                    <h2>R$ {{bicicleta.preco|floatformat:2}}</h2>
                 </span>
+                <br>
                 <span id="descricao-prod">
-                    <h4>{{bicicleta.descricao}}</h4>
+                    {{bicicleta.descricao}}
                 </span>
+                <br><br>
+                <button data-product="{{ bicicleta.id }}" data-action="add" class="update-cart">Comprar</button>
             </span>
         </span>
 {% endblock %}

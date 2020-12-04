@@ -8,6 +8,13 @@
     {% block title %}
 
     {% endblock %}
+    <!-- script para estabelecer o user -->
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+    <script type="text/javascript">
+        let user = '{{ request.user }}';
+        const csrftoken = Cookies.get('csrftoken');
+    </script>
+
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700|Roboto+Slab:400,700|Pacifico' rel='stylesheet' type='text/css' />
     <link rel="stylesheet" href="{% static "css/normalize.css" %}" />
     <link rel="stylesheet" href="{% static "css/estilos.css" %}" />
@@ -30,7 +37,7 @@
                 Carrinho
         </div>
        <div class="elementTopo elementTopo_perfil">
-                <a href="#">
+                <a href="{% url 'admin:index' %}">
                     <div> <img src="{% static "img/pessoa.png" %}" /></div>
                 </a>
                 Login
@@ -51,6 +58,9 @@
     {% endblock %}
 
     {% include 'base/rodape.html' %}
+
+<!-- scripts -->
+    <script type="text/javascript" src="{% static 'js/carrinho.js' %}"></script>
 
 </body>
 </html>

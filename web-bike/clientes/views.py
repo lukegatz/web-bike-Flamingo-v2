@@ -5,10 +5,10 @@ from django.shortcuts import render
 from .models import Cliente
 
 
-'''
+"""
 A função ler_cliente retorna um cliente (baseado no usuário do cliente) ou
 None, caso esse cliente não exista.
-'''
+"""
 def ler_cliente(usuario):
     clientes = Cliente.objects.filter(usuario=usuario)
 
@@ -18,10 +18,10 @@ def ler_cliente(usuario):
         return None
 
 
-'''
+"""
 A view cliente retorna os dados do cliente, fazendo uma chamada a ler_cliente para
 verificar se o usuario que foi passado como parâmetro existe.
-'''
+"""
 def cliente(request, usuario):
     # o user já é o próprio name (o Cliente retorna name por padrão)
     user = ler_cliente(usuario)
